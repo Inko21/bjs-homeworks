@@ -1,3 +1,5 @@
+'use strict'
+
 function initCheckBirthday() {
     const birthday = document.getElementById('birthday').value;
 
@@ -7,8 +9,19 @@ function initCheckBirthday() {
 }
 
 function checkBirthday(birthday) {
-    // код для задачи №1 писать здесь
-}
+    let now = Date.now();
+    birthday = Date.now(birthday);
+    let diff = now - birthday;
+    let age = diff / 31557600000;
+    console.log(age);
+    if (age >= 18) {
+        return console.log('Клиент совершеннолетний')
+    } else {
+        return console.log('Пей лимонад')
+    }
+};
+
+
 
 function initPrintAnimalSound() {
     const animal = {
@@ -21,7 +34,12 @@ function initPrintAnimalSound() {
 }
 
 function getAnimalSound(animal) {
-    // код для задачи №2 писать здесь
+    let sound = animal.sound;
+    if (animal === undefined) {
+        return null;
+    } else {
+        return sound;
+    };
 }
 
 function initCalculateStatement() {
@@ -35,5 +53,11 @@ function initCalculateStatement() {
 }
 
 function getAverageMark(marks) {
-    // код для задачи №3 писать здесь
+    let average = null;
+    for (let num in marks){
+        average += marks[num];
+    }
+    average = average / marks.length;
+    let roundedAverage = Math.round(average);
+    return roundedAverage;
 }
