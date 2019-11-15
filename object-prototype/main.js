@@ -10,7 +10,7 @@ function initCheckBirthday() {
 
 function checkBirthday(birthday) {
     let now = new Date();
-    birthday = new Dote(birthday);
+    birthday = new Date(birthday);
     let diff = now - birthday;
     let age = diff / 31557600000;
     console.log(age);
@@ -20,8 +20,6 @@ function checkBirthday(birthday) {
         return console.log('Пей лимонад')
     }
 };
-
-
 
 function initPrintAnimalSound() {
     const animal = {
