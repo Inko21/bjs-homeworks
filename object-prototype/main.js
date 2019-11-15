@@ -9,8 +9,8 @@ function initCheckBirthday() {
 }
 
 function checkBirthday(birthday) {
-    let now = Date.now();
-    birthday = Date.now(birthday);
+    let now = new Date();
+    birthday = new Dote(birthday);
     let diff = now - birthday;
     let age = diff / 31557600000;
     console.log(age);
