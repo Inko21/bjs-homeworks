@@ -58,182 +58,61 @@ console.log(sword.isBroken());
 console.log(bow.isBroken());
 console.log('\n');
 console.log('Второе задание:');
-// Задание 2 "Переработка оружия"
 
-class Arm {
-  constructor(name, attack, durability, range){
+// Задание 2 "Переработка оружия"
+class Arm extends Weapon {
+  constructor(name, attack, durability, range, startDurability){
+    super(name, attack, durability, range, startDurability);
     this.name = 'Рука';
     this.attack = 1;
     this.durability = Infinity;
     this.range = 1;
     this.startDurability = this.durability;
   }
-  
-  takeDamage(damage){
-    if (damage > this.durability) {
-      this.durability = 0
-    } else { 
-      this.durability = this.durability - damage;
-    }
-  }
-
-  getDamage(){
-    let check = this.durability / this.startDurability * 100;
-    if (check >= 30) {
-      return this.attack;
-    } else {
-      return this.attack / 2;
-    };
-  };
-
-  isBroken(){
-    if (this.durability > 0) {
-      return false;
-    } else {
-      return true;
-    };
-  };
 };
 
-class Bow {
-  constructor(name, attack, durability, range){
+class Bow extends Weapon {
+  constructor(name, attack, durability, range, startDurability){
+    super(name, attack, durability, range, startDurability);
     this.name = 'Лук';
     this.attack = 10;
     this.durability = 200;
     this.range = 3;
     this.startDurability = this.durability;
   }
-  
-  takeDamage(damage){
-    if (damage > this.durability) {
-      this.durability = 0
-    } else { 
-      this.durability = this.durability - damage;
-    }
-  }
-
-  getDamage(){
-    let check = this.durability / this.startDurability * 100;
-    if (check >= 30) {
-      return this.attack;
-    } else {
-      return this.attack / 2;
-    };
-  };
-
-  isBroken(){
-    if (this.durability > 0) {
-      return false;
-    } else {
-      return true;
-    };
-  };
 };
 
-class Sword {
-  constructor(name, attack, durability, range){
+class Sword extends Weapon {
+  constructor(name, attack, durability, range, startDurability){
+    super(name, attack, durability, range, startDurability);
     this.name = 'Меч';
     this.attack = 25;
     this.durability = 500;
     this.range = 1;
     this.startDurability = this.durability;
   }
-  
-  takeDamage(damage){
-    if (damage > this.durability) {
-      this.durability = 0
-    } else { 
-      this.durability = this.durability - damage;
-    }
-  }
-
-  getDamage(){
-    let check = this.durability / this.startDurability * 100;
-    if (check >= 30) {
-      return this.attack;
-    } else {
-      return this.attack / 2;
-    };
-  };
-
-  isBroken(){
-    if (this.durability > 0) {
-      return false;
-    } else {
-      return true;
-    };
-  };
 };
 
-class Knife {
-  constructor(name, attack, durability, range){
+class Knife extends Weapon {
+  constructor(name, attack, durability, range, startDurability){
+    super(name, attack, durability, range, startDurability);
     this.name = 'Нож';
     this.attack = 5;
     this.durability = 300;
     this.range = 1;
     this.startDurability = this.durability;
   }
-  
-  takeDamage(damage){
-    if (damage > this.durability) {
-      this.durability = 0
-    } else { 
-      this.durability = this.durability - damage;
-    }
-  }
-
-  getDamage(){
-    let check = this.durability / this.startDurability * 100;
-    if (check >= 30) {
-      return this.attack;
-    } else {
-      return this.attack / 2;
-    };
-  };
-
-  isBroken(){
-    if (this.durability > 0) {
-      return false;
-    } else {
-      return true;
-    };
-  };
 };
 
-class Staff {
-  constructor(name, attack, durability, range){
+class Staff extends Weapon {
+  constructor(name, attack, durability, range, startDurability){
+    super(name, attack, durability, range, startDurability);
     this.name = 'Посох';
     this.attack = 8;
     this.durability = 300;
     this.range = 2;
     this.startDurability = this.durability;
   }
-  
-  takeDamage(damage){
-    if (damage > this.durability) {
-      this.durability = 0
-    } else { 
-      this.durability = this.durability - damage;
-    }
-  }
-  
-
-  getDamage(){
-    let check = this.durability / this.startDurability * 100;
-    if (check >= 30) {
-      return this.attack;
-    } else {
-      return this.attack / 2;
-    };
-  };
-
-  isBroken(){
-    if (this.durability > 0) {
-      return false;
-    } else {
-      return true;
-    };
-  };
 };
 
 const newBow = new Bow();
@@ -314,4 +193,4 @@ console.log(log.addGrade(4, 'Algebra'));
 console.log(log.addGrade('four', 'Algebra'));
 console.log(log.getAverageBySubject('Math'));
 console.log(log.getAverageBySubject('Biology'));
-console.log(log.getTotalAverage());
+console.log(log.getTotalAverage()); 
