@@ -9,15 +9,17 @@ function initCheckBirthday() {
 }
 
 function checkBirthday(birthday) {
-    let now = new Date();
-    birthday = new Date(birthday);
-    let diff = now - birthday;
-    let age = diff / 31557600000;
+    const now = new Date();
+    const birthdayDate = new Date(birthday);
+    const diff = now - birthdayDate;
+    const age = diff / 31557600000;
     console.log(age);
     if (age >= 18) {
-        return console.log('Клиент совершеннолетний')
+        console.log('Клиент совершеннолетний');
+        return true;
     } else {
-        return console.log('Пей лимонад')
+        console.log('Пей лимонад');
+        return false;
     }
 };
 
@@ -32,10 +34,10 @@ function initPrintAnimalSound() {
 }
 
 function getAnimalSound(animal) {
-    let sound = animal.sound;
     if (animal === undefined) {
         return null;
     } else {
+        const sound = animal.sound;
         return sound;
     };
 }
@@ -51,11 +53,11 @@ function initCalculateStatement() {
 }
 
 function getAverageMark(marks) {
-    let average = null;
+    let summary = null;
     for (let num in marks){
-        average += marks[num];
+        summary += marks[num];
     }
-    average = average / marks.length;
-    let roundedAverage = Math.round(average);
+    const average = summary / marks.length;
+    const roundedAverage = Math.round(average);
     return roundedAverage;
-}
+};
