@@ -53,9 +53,9 @@ function initCalculateStatement() {
 }
 
 function getAverageMark(marks) {
-    let summary = null;
+    let summary = 0;
     for (let num in marks){
-        summary += marks[num];
+        summary += parseInt(marks[num]);
     }
     const average = summary / marks.length;
     const roundedAverage = Math.round(average);
