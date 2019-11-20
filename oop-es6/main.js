@@ -115,11 +115,46 @@ class Staff extends Weapon {
   }
 };
 
+class LongBow extends Bow {
+  constructor(name, attack, durability, range, startDurability){
+    super(name, attack, durability, range, startDurability);
+    this.name = 'Длинный лук';
+    this.attack = 15;
+    this.durability = 200;
+    this.range = 4;
+    this.startDurability = this.durability;
+  }
+};
+
+class Ax extends Sword {
+  constructor(name, attack, durability, range, startDurability){
+    super(name, attack, durability, range, startDurability);
+    this.name = 'Секира';
+    this.attack = 27;
+    this.durability = 800;
+    this.range = 1;
+    this.startDurability = this.durability;
+  }
+};
+
+class StaffOfTheStorm extends Staff {
+  constructor(name, attack, durability, range, startDurability){
+    super(name, attack, durability, range, startDurability);
+    this.name = 'Посох Бури';
+    this.attack = 10;
+    this.durability = 300;
+    this.range = 3;
+    this.startDurability = this.durability;
+  }
+};
+
 const newBow = new Bow();
 const newArm = new Arm();
 const newSword = new Sword();
+const newStaff = new StaffOfTheStorm();
 
-
+newStaff.takeDamage(1);
+console.log(newStaff.durability);
 newBow.takeDamage(180);
 console.log(newBow.durability);
 newBow.takeDamage(210);
