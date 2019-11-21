@@ -15,7 +15,7 @@ function setAlarm (time, callback){
     return currentTime;
   };
   if (systemTime() === time){
-    return callback;
+    return callback();
   };
 };
 
@@ -27,4 +27,4 @@ function setDailyRhythm(wakeUpTime, bedTime){
   setInterval(setAlarm, 1000, bedTime, goToSleep);
 };
 
-console.log(setDailyRhythm("15:36", "15:37"));
+setDailyRhythm("18:13", "18:14");
